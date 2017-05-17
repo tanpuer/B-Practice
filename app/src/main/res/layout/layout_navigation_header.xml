@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navigation_header_height"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@color/colorPrimary"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/header_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ico_user_default"
+        app:civ_border_width="@dimen/circle_avatar_border"
+        app:civ_border_color="@color/white"
+        android:layout_marginStart="@dimen/circle_avatar_margin"
+        android:layout_marginEnd="@dimen/circle_avatar_margin"
+        android:clickable="true"
+    />
+
+    <ImageView
+        android:id="@+id/iv_head_noftiy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/navigation_header_right_margin"
+        android:src="@drawable/ic_navigation_header_notification" />
+
+    <ImageView
+        android:id="@+id/iv_head_switch_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_switch_night"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/navigation_header_right_margin_big"
+        />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_avatar"
+        android:text="@string/temple"
+        android:layout_margin="@dimen/navigation_header_text_margin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level_text"
+        android:layout_below="@id/header_avatar"
+        android:layout_toRightOf="@id/user_name"
+        android:layout_margin="@dimen/navigation_header_text_margin"
+        android:background="@drawable/white_border"
+        />
+
+    <TextView
+        android:id="@+id/other_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_name"
+        android:text="@string/members"
+        android:layout_marginLeft="@dimen/navigation_header_margin_left"
+        />
+
+</RelativeLayout>
