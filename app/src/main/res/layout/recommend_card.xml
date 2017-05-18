@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/recommend_card_elevation"
+    app:cardCornerRadius="@dimen/recommend_card_corner_radius"
+    app:cardBackgroundColor="@color/card_view_background"
+    android:layout_margin="@dimen/recommend_card_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/recommend_image"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            />
+
+        <TextView
+            android:id="@+id/recommend_desc"
+            android:layout_below="@id/recommend_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/recommend_card_margin"
+            android:layout_marginBottom="@dimen/recommend_card_margin"
+            />
+
+        <ImageView
+            android:id="@+id/recommend_play"
+            android:layout_width="@dimen/recommend_card_icon"
+            android:layout_height="@dimen/recommend_card_icon"
+            android:src="@drawable/ic_play_circle_outline_black_24dp"
+            android:layout_below="@id/recommend_desc"
+            android:layout_marginStart="@dimen/recommend_card_icon_margin"
+            />
+
+        <TextView
+            android:id="@+id/recommend_play_num"
+            android:layout_toRightOf="@id/recommend_play"
+            android:layout_below="@id/recommend_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1111"
+            />
+
+        <ImageView
+            android:id="@+id/recommend_review"
+            android:layout_width="@dimen/recommend_card_icon"
+            android:layout_height="@dimen/recommend_card_icon"
+            android:src="@drawable/ic_subtitles_black_24dp"
+            android:layout_below="@id/recommend_desc"
+            android:layout_marginStart="@dimen/recommend_card_icon_margin"
+            android:layout_toRightOf="@id/recommend_play_num"
+            />
+        <TextView
+            android:id="@+id/recommend_review_num"
+            android:layout_toRightOf="@id/recommend_review"
+            android:layout_below="@id/recommend_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1111"
+            android:layout_marginBottom="@dimen/recommend_card_margin"
+            />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+
+
+
+

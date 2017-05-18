@@ -38,7 +38,7 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
     private RecommendRecyclerViewAdapter mAdapter;
     private List<RecommendBannerInfo.DataBean> bannerList;
     private List<RecommendInfo.ResultBean> infoList;
-    private List<RecommendInfo.ResultBean.BodyBean> infoBodyList;
+    private List<RecommendInfo.ResultBean> tempinfoList;
 
     public static HomeRecommendFragment newInstance(){
         return new HomeRecommendFragment();
@@ -59,7 +59,6 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
         loadingImage = (ImageView) loadingView.findViewById(R.id.loading_image);
         bannerList = new ArrayList<>();
         infoList = new ArrayList<>();
-        infoBodyList = new ArrayList<>();
         isPrepared = true;
         lazyLoad();
     }
@@ -140,10 +139,18 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
     @Override
     public void setRecommendBean(RecommendBean recommendBean) {
         this.mRecommendBean = recommendBean;
-        bannerList = recommendBean.getRecommendBannerInfo().getData();
-        infoList = recommendBean.getRecommendInfo().getResult();
-        mAdapter = new RecommendRecyclerViewAdapter(infoList, bannerList, getActivity());
-        mRecyclerView.setAdapter(mAdapter);
+        tempinfoList = recommendBean.getRecommendInfo().getResult();
+        for (int i=0;i<tempinfoList.size();i++){
+            if (tempinfoList.get(i).getBody().size()!=4){
+                tempinfoList.remove(i);
+            }
+        }
+        infoList.addAll(tempinfoList);
+//        infoList.addAll(recommendBean.getRecommendInfo().getResult());
+        bannerList.addAll(recommendBean.getRecommendBannerInfo().getData());
+        //如果是add进去，而不是赋值的话， notifyDataSetChanged
+//        mAdapter = new RecommendRecyclerViewAdapter(infoList, bannerList, getActivity());
+//        mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }
 }

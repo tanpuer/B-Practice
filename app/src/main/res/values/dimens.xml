@@ -31,5 +31,10 @@
 
     <!--RecommendFragment相关-->
     <dimen name="recommend_banner_height">150dp</dimen>
+    <dimen name="recommend_card_elevation">4dp</dimen>
+    <dimen name="recommend_card_corner_radius">4dp</dimen>
+    <dimen name="recommend_card_margin">10dp</dimen>
+    <dimen name="recommend_card_icon">20dp</dimen>
+    <dimen name="recommend_card_icon_margin">10dp</dimen>
 
 </resources>
