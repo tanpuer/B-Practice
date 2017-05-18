@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.cw.b_practice.R;
@@ -65,12 +66,15 @@ public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
             RecommendInfo.ResultBean.HeadBean headBean = infoList.get(position-1).getHead();
             ((InfoViewHolder) holder).txt.setText(headBean.getTitle());
             for (int i=0; i<((InfoViewHolder) holder).mGridLayout.getChildCount();i++){
+                RecommendInfo.ResultBean.BodyBean bodyBean = infoList.get(position-1).getBody().get(i);
                 CardView cardView = (CardView) ((InfoViewHolder) holder).mGridLayout.getChildAt(i);
+
+                cardView.setOnClickListener((v)-> Toast.makeText(mContext, bodyBean.getGotoX(), Toast.LENGTH_SHORT).show());
+
                 ImageView imageView = (ImageView) cardView.findViewById(R.id.recommend_image);
                 TextView playNum = (TextView) cardView.findViewById(R.id.recommend_play_num);
                 TextView reviewNum = (TextView) cardView.findViewById(R.id.recommend_review_num);
                 TextView desc = (TextView) cardView.findViewById(R.id.recommend_desc);
-                RecommendInfo.ResultBean.BodyBean bodyBean = infoList.get(position-1).getBody().get(i);
                 desc.setText(bodyBean.getTitle());
                 playNum.setText(bodyBean.getPlay());
                 reviewNum.setText(bodyBean.getDanmaku());
