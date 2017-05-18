@@ -145,6 +145,7 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
                 tempinfoList.remove(i);
             }
         }
+        clearList();
         infoList.addAll(tempinfoList);
 //        infoList.addAll(recommendBean.getRecommendInfo().getResult());
         bannerList.addAll(recommendBean.getRecommendBannerInfo().getData());
@@ -152,5 +153,12 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
 //        mAdapter = new RecommendRecyclerViewAdapter(infoList, bannerList, getActivity());
 //        mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
+    }
+
+    private void clearList(){
+        if (infoList.size() !=0 && bannerList.size() !=0){
+            infoList.clear();
+            bannerList.clear();
+        }
     }
 }

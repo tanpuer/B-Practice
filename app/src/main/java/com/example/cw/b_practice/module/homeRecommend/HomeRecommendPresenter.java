@@ -103,6 +103,7 @@ public class HomeRecommendPresenter implements IHomeRecommendContract.IHomeRecom
                 @Override
                 public void onComplete() {
                     view.showOrHideLoadingView(false);
+                    view.setIsRefreshing(false);
                 }
             });
         }

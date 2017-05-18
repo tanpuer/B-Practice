@@ -36,5 +36,6 @@
     <dimen name="recommend_card_margin">10dp</dimen>
     <dimen name="recommend_card_icon">20dp</dimen>
     <dimen name="recommend_card_icon_margin">10dp</dimen>
+    <dimen name="recommend_card_icon_margin_big">30dp</dimen>
 
 </resources>
