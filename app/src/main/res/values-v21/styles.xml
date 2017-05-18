@@ -9,7 +9,7 @@
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <!-- 从5.0开始 设置状态栏颜色，否则默认灰色!-->
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="MainActivityTranslucentTheme" parent="@style/BaseAppTheme">
