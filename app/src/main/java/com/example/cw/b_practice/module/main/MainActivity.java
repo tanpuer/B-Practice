@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -111,9 +110,6 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
     @Override
     public void onClick(View v) {
         mPresenter.onClick(v);
-        if (v.getId() == R.id.iv_head_switch_mode){
-            recreate();
-        }
     }
 
     @Override
@@ -121,10 +117,17 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
         boolean isNight = PreferencesUtil.getBoolean(ConstantsUtil.SWITCH_MODE_KEY, false);
         if (isNight){
             head_switch_mode.setImageResource(R.drawable.ic_switch_night);
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }else {
             head_switch_mode.setImageResource(R.drawable.ic_switch_daily);
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+    }
+
+    @Override
+    public void reCreateView() {
+        // TODO: 2017/5/19 日夜间切换bug
+        getSupportFragmentManager().beginTransaction().hide(mMainFragment).commit();
+        this.recreate();
     }
 }

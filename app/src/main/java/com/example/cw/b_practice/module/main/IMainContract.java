@@ -21,5 +21,7 @@ public interface IMainContract {
 
         void changeDayNightImage();
 
+        void reCreateView();
+
     }
 }

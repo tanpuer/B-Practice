@@ -140,11 +140,12 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
     public void setRecommendBean(RecommendBean recommendBean) {
         this.mRecommendBean = recommendBean;
         tempinfoList = recommendBean.getRecommendInfo().getResult();
-//        for (int i=0;i<tempinfoList.size();i++){
-//            if (tempinfoList.get(i).getBody().size()!=4){
-//                tempinfoList.remove(i);
-//            }
-//        }
+        // TODO: 2017/5/19  先过滤 避免crash
+        for (int i=0;i<tempinfoList.size();i++){
+            if (tempinfoList.get(i).getBody().size()!=4){
+                tempinfoList.remove(i);
+            }
+        }
         clearList();
         infoList.addAll(tempinfoList);
 //        infoList.addAll(recommendBean.getRecommendInfo().getResult());

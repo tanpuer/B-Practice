@@ -54,6 +54,7 @@ public class MainPresenter implements IMainContract.IMainPresenter {
 
     @Override
     public void onClick(View v) {
+        final IMainContract.IMainView view = mViews.get();
         switch (v.getId()){
             case R.id.iv_head_noftiy:{
                 break;
@@ -69,6 +70,9 @@ public class MainPresenter implements IMainContract.IMainPresenter {
                 }else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     PreferencesUtil.setBoolean(ConstantsUtil.SWITCH_MODE_KEY, true);
+                }
+                if (view != null){
+                    view.reCreateView();
                 }
                 break;
             }
