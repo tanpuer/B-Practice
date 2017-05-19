@@ -125,11 +125,12 @@ public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         if (position < 1){
             return Recommend_Banner;
         }else if (position >=1 && position< getItemCount()){
-            if (infoList.get(position).getBody().size() == 1) {
-                return Recommend_Info_Image;
-            }else {
-                return Recommend_Info_Card;
-            }
+//            if (infoList.get(position).getBody().size() == 1) {
+//                return Recommend_Info_Image;
+//            }else {
+//                return Recommend_Info_Card;
+//            }
+            return Recommend_Info_Card;
         }
         return 0;
     }

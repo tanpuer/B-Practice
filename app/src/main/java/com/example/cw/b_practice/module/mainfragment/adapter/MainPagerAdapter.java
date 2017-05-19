@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.module.homeRecommend.HomeRecommendFragment;
+import com.example.cw.b_practice.module.homeRegion.HomeRegionFragment;
 
 /**
  * Created by cw on 2017/5/16.
@@ -37,7 +38,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter{
                     fragments[2] = HomeRecommendFragment.newInstance();
                     break;
                 case 3:
-                    fragments[3] = HomeRecommendFragment.newInstance();
+                    fragments[3] = HomeRegionFragment.newInstance();
                     break;
                 case 4:
                     fragments[4] = HomeRecommendFragment.newInstance();

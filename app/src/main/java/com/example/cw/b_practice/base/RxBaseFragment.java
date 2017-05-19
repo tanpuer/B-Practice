@@ -68,7 +68,7 @@ public abstract class RxBaseFragment extends RxFragment {
     }
 
     protected void onVisible() {
-
+        lazyLoad();
     }
 
     public View getParentView(){

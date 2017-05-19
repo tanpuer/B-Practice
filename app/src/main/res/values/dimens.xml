@@ -39,4 +39,9 @@
     <dimen name="recommend_card_icon_margin_big">30dp</dimen>
     <dimen name="recommend_card_title_img_size">20dp</dimen>
 
+    <!--HomeRegionFragment相关 -->
+    <dimen name="home_region_image_size">50dp</dimen>
+    <dimen name="home_region_txt_margin">10dp</dimen>
+    <dimen name="home_region_margin_top">20dp</dimen>
+
 </resources>
