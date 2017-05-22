@@ -87,7 +87,7 @@ public class HomeLiveAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         else if (holder instanceof MyPartitionCardViewHolder){
             LiveAppIndexInfo.DataBean.PartitionsBean.LivesBean bean = mPartitionsBeen.get((position-6)/5).getLives().get((position-7)%5);
             Glide.with(mContext).load(bean.getCover().getSrc()).into(((MyPartitionCardViewHolder) holder).img);
-            Glide.with(mContext).load(bean.getOwner().getFace()).into(((MyPartitionCardViewHolder) holder).avtar);
+            Glide.with(mContext).load(bean.getOwner().getFace()).into(((MyPartitionCardViewHolder) holder).avatar);
             ((MyPartitionCardViewHolder) holder).title.setText(bean.getTitle());
             ((MyPartitionCardViewHolder) holder).name.setText(bean.getOwner().getName());
             ((MyPartitionCardViewHolder) holder).num.setText(String.valueOf(bean.getOnline()));
@@ -164,12 +164,12 @@ public class HomeLiveAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public class MyPartitionCardViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView img;
-        private CircleImageView avtar;
+        private CircleImageView avatar;
         private TextView title, name, num;
         public MyPartitionCardViewHolder(View itemView) {
             super(itemView);
             img = (ImageView) itemView.findViewById(R.id.live_partition_card_bg);
-            avtar = (CircleImageView) itemView.findViewById(R.id.live_partition_card_circle_image);
+            avatar = (CircleImageView) itemView.findViewById(R.id.live_partition_card_circle_image);
             title = (TextView) itemView.findViewById(R.id.live_partition_card_title);
             name = (TextView) itemView.findViewById(R.id.live_partition_card_name);
             num = (TextView) itemView.findViewById(R.id.live_partition_card_num);
