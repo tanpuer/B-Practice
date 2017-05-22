@@ -46,7 +46,7 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
 
     @Override
     protected int getResLayoutId() {
-        return R.layout.fragment_home_recommedn;
+        return R.layout.fragment_home;
     }
 
     @Override
@@ -112,14 +112,14 @@ public class HomeRecommendFragment extends RxBaseFragment implements IHomeRecomm
 
     @Override
     protected void initRefreshLayout() {
-        mSwipeRefreshLayout = (SwipeRefreshLayout) getParentView().findViewById(R.id.recommend_refresh_layout);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) getParentView().findViewById(R.id.home_refresh_layout);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         mSwipeRefreshLayout.setOnRefreshListener(()-> mPresenter.loadData());
     }
 
     @Override
     protected void initRecyclerView() {
-        mRecyclerView = (RecyclerView) getParentView().findViewById(R.id.recommend_recycler_view);
+        mRecyclerView = (RecyclerView) getParentView().findViewById(R.id.home_recycler_view);
         mAdapter = new RecommendRecyclerViewAdapter(infoList, bannerList, getActivity());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(linearLayoutManager);

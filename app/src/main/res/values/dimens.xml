@@ -44,4 +44,22 @@
     <dimen name="home_region_txt_margin">10dp</dimen>
     <dimen name="home_region_margin_top">20dp</dimen>
 
+    <!-- HomeLiveFragment相关-->
+    <dimen name="home_live_entrance_image_size">50dp</dimen>
+    <dimen name="home_live_entrance_image_margin">10dp</dimen>
+    <dimen name="home_live_entrance_text_size">16sp</dimen>
+    <dimen name="home_live_entrance_text_margin">10dp</dimen>
+    <dimen name="home_live_entrance_margin">10dp</dimen>
+    <dimen name="home_live_partition_title_image_size">20dp</dimen>
+    <dimen name="home_live_partition_title_txt_size">16sp</dimen>
+    <dimen name="home_live_partition_margin_start">10dp</dimen>
+    <dimen name="home_live_partition_card_image_size">100dp</dimen>
+    <dimen name="home_live_partition_card_elevation">4dp</dimen>
+    <dimen name="home_live_partition_card_corner_radius">4dp</dimen>
+    <dimen name="home_live_partition_card_margin">10dp</dimen>
+    <dimen name="home_live_partition_card_circle_image_size">20dp</dimen>
+    <dimen name="home_live_partition_card_circle_image_margin">10dp</dimen>
+    <dimen name="home_live_partition_card_watching">10dp</dimen>
+    <dimen name="home_live_partition_card_title_margin">10dp</dimen>
+
 </resources>

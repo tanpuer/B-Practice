@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.cw.b_practice.R;
+import com.example.cw.b_practice.module.homeLive.HomeLiveFragment;
 import com.example.cw.b_practice.module.homeRecommend.HomeRecommendFragment;
 import com.example.cw.b_practice.module.homeRegion.HomeRegionFragment;
 
@@ -29,7 +30,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter{
         if (fragments[position] == null){
             switch (position){
                 case 0:
-                    fragments[0] = HomeRecommendFragment.newInstance();
+                    fragments[0] = HomeLiveFragment.newInstance();
                     break;
                 case 1:
                     fragments[1] = HomeRecommendFragment.newInstance();
