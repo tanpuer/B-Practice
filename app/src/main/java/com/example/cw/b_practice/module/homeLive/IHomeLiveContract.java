@@ -1,7 +1,7 @@
 package com.example.cw.b_practice.module.homeLive;
 
-import com.example.cw.b_practice.base.IBasePresenter;
-import com.example.cw.b_practice.base.IBaseView;
+import com.example.cw.b_practice.base.home.IHomeBasePresenter;
+import com.example.cw.b_practice.base.home.IHomeBaseView;
 import com.example.cw.b_practice.entity.live.LiveAppIndexInfo;
 
 /**
@@ -10,17 +10,13 @@ import com.example.cw.b_practice.entity.live.LiveAppIndexInfo;
 
 public interface IHomeLiveContract {
 
-    interface IHomeLivePresenter extends IBasePresenter{
+    interface IHomeLivePresenter extends IHomeBasePresenter{
 
         void loadData();
 
     }
 
-    interface IHomeLiveView extends IBaseView<IHomeLivePresenter>{
-
-        void showOrHideLoadingView(boolean show);
-
-        void showOrHideErrorView(boolean show);
+    interface IHomeLiveView extends IHomeBaseView<IHomeLivePresenter> {
 
         void setIsRefreshing(boolean isRefreshing);
 

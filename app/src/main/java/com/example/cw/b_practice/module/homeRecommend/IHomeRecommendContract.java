@@ -1,7 +1,7 @@
 package com.example.cw.b_practice.module.homeRecommend;
 
-import com.example.cw.b_practice.base.IBasePresenter;
-import com.example.cw.b_practice.base.IBaseView;
+import com.example.cw.b_practice.base.home.IHomeBasePresenter;
+import com.example.cw.b_practice.base.home.IHomeBaseView;
 import com.example.cw.b_practice.entity.recommend.RecommendBean;
 
 /**
@@ -10,7 +10,7 @@ import com.example.cw.b_practice.entity.recommend.RecommendBean;
 
 public interface IHomeRecommendContract {
 
-    interface IHomeRecommendPresenter extends IBasePresenter{
+    interface IHomeRecommendPresenter extends IHomeBasePresenter{
 
         void loadData();
 
@@ -18,11 +18,7 @@ public interface IHomeRecommendContract {
 
     }
 
-    interface IHomeRecommendView extends IBaseView<IHomeRecommendPresenter>{
-
-        void showOrHideLoadingView(boolean show);
-
-        void showOrHideErrorView(boolean show);
+    interface IHomeRecommendView extends IHomeBaseView<IHomeRecommendPresenter> {
 
         void setIsRefreshing(boolean isRefreshing);
 

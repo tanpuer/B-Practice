@@ -1,7 +1,7 @@
 package com.example.cw.b_practice.module.homeDiscovery;
 
-import com.example.cw.b_practice.base.IBasePresenter;
-import com.example.cw.b_practice.base.IBaseView;
+import com.example.cw.b_practice.base.home.IHomeBasePresenter;
+import com.example.cw.b_practice.base.home.IHomeBaseView;
 import com.example.cw.b_practice.entity.discover.HotSearchTag;
 
 import java.util.List;
@@ -12,17 +12,13 @@ import java.util.List;
 
 public interface IHomeDiscoveryContract {
 
-    interface IHomeDiscoveryView extends IBaseView<IHomeDiscoveryPresenter>{
-
-        void showOrHideLoadingView(boolean show);
-
-        void showOrHideErrorView(boolean show);
+    interface IHomeDiscoveryView extends IHomeBaseView<IHomeDiscoveryPresenter> {
 
         void setListBean(List<HotSearchTag.ListBean> listBean);
 
     }
 
-    interface IHomeDiscoveryPresenter extends IBasePresenter{
+    interface IHomeDiscoveryPresenter extends IHomeBasePresenter{
 
         void loadData();
 
