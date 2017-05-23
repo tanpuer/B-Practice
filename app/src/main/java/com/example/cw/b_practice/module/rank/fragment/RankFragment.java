@@ -3,6 +3,7 @@ package com.example.cw.b_practice.module.rank.fragment;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseFragment;
 
 /**
@@ -19,7 +20,7 @@ public class RankFragment extends RxBaseFragment implements IRankFragmentContrac
 
     @Override
     protected int getResLayoutId() {
-        return 0;
+        return R.layout.fragment_rank;
     }
 
     @Override
