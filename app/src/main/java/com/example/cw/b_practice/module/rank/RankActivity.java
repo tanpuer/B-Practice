@@ -36,8 +36,8 @@ public class RankActivity extends RxBaseActivity implements IRankContract.IRankV
         mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mViewPager.setOffscreenPageLimit(5);
         type = getIntent().getExtras().getInt("type",1);
-        Log.d(TAG, "initViews: " + type);
         mPresenter.getTypeInfo(type);
     }
 
@@ -53,11 +53,9 @@ public class RankActivity extends RxBaseActivity implements IRankContract.IRankV
 
     @Override
     public void setTypeInfo(String[] mTitles, String[] mTypes, String title) {
-        Log.d(TAG, "setTypeInfo: " + mTitles.length);
         RankAdapter adapter = new RankAdapter(getSupportFragmentManager(), mTitles, mTypes, title);
         mToolbar.setTitle(title);
         mViewPager.setAdapter(adapter);
-        mViewPager.setOffscreenPageLimit(mTitles.length-1);
         mSlidingTabLayout.setViewPager(mViewPager);
     }
 }

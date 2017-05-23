@@ -9,6 +9,7 @@
     <dimen name="circle_avatar_margin">20dp</dimen>
     <dimen name="default_margin">10dp</dimen>
     <dimen name="tags_radius">4dp</dimen>
+    <dimen name="flyco_tab_width">50dp</dimen>
 
     <!--drawerLayout相关-->
     <dimen name="navigation_header_height">160dp</dimen>

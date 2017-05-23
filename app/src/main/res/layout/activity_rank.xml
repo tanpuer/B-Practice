@@ -25,6 +25,7 @@
             android:background="@color/colorPrimary"
             app:tl_indicator_corner_radius="@dimen/sliding_tab_corner_radius"
             app:tl_tab_space_equal="true"
+            app:tl_tab_width="@dimen/flyco_tab_width"
             >
         </com.flyco.tablayout.SlidingTabLayout>
     </android.support.design.widget.AppBarLayout>
