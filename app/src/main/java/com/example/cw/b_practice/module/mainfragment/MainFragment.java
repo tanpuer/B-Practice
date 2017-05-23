@@ -58,7 +58,7 @@ public class MainFragment extends RxBaseFragment implements IMainFragmentContrac
         mViewPager.setOffscreenPageLimit(5);
         mViewPager.setAdapter(mAdapter);
         mSlidingTabs.setViewPager(mViewPager);
-        mViewPager.setCurrentItem(0);
+        mViewPager.setCurrentItem(5);
         if (mPresenter == null){
             setPresenter(new MainFragmentPresenter(this));
         }

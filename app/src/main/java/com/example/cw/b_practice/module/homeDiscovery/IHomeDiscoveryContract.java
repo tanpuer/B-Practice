@@ -16,6 +16,8 @@ public interface IHomeDiscoveryContract {
 
         void setListBean(List<HotSearchTag.ListBean> listBean);
 
+        void showOrHideTag();
+
     }
 
     interface IHomeDiscoveryPresenter extends IHomeBasePresenter{

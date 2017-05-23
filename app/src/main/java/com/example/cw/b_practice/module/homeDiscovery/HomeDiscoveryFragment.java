@@ -3,13 +3,17 @@ package com.example.cw.b_practice.module.homeDiscovery;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseFragment;
 import com.example.cw.b_practice.entity.discover.HotSearchTag;
 import com.example.cw.b_practice.module.homeDiscovery.adapter.HotTagRecyclerViewAdapter;
+import com.example.cw.b_practice.util.DisplayUtil;
 import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
@@ -22,7 +26,7 @@ import java.util.List;
  * Created by cw on 2017/5/22.
  */
 
-public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscoveryContract.IHomeDiscoveryView {
+public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscoveryContract.IHomeDiscoveryView, View.OnClickListener{
 
     private static final String TAG = "HomeDiscoveryFragment";
     private IHomeDiscoveryContract.IHomeDiscoveryPresenter mPresenter;
@@ -31,6 +35,8 @@ public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscov
     private View loadingView, errorView;
     private ImageView loadingImage;
     private AnimationDrawable mAnimationDrawable;
+    private boolean isOpen = false;
+    private TextView tagText;
 
     public static HomeDiscoveryFragment newInstance(){
         return new HomeDiscoveryFragment();
@@ -55,7 +61,10 @@ public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscov
         loadingView = view.findViewById(R.id.loading_view);
         loadingImage = (ImageView) loadingView.findViewById(R.id.loading_image);
         errorView = view.findViewById(R.id.error_view);
+        tagText = (TextView) view.findViewById(R.id.discovery_tag_txt);
+        tagText.setOnClickListener(this);
         mList = new ArrayList<>();
+        showOrHideTag();
         isPrepared = true;
         lazyLoad();
     }
@@ -104,9 +113,43 @@ public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscov
         mRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
+    @Override
+    public void showOrHideTag() {
+        if (isOpen){
+            Log.d(TAG, "showOrHideTag: true " + isOpen);
+            tagText.setText(R.string.look_hide);
+            tagText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_arrow_up_gray_round,0,0,0);
+            ViewGroup.LayoutParams params = mRecyclerView.getLayoutParams();
+            params.height = DisplayUtil.dp2px(getActivity(), 200);
+            mRecyclerView.setLayoutParams(params);
+        }else {
+            Log.d(TAG, "showOrHideTag: false" + isOpen);
+            tagText.setText(R.string.look_more);
+            tagText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_arrow_down_gray_round, 0, 0, 0);
+            ViewGroup.LayoutParams params = mRecyclerView.getLayoutParams();
+            params.height = DisplayUtil.dp2px(getActivity(), 100);
+            mRecyclerView.setLayoutParams(params);
+        }
+    }
+
     private void clearList(){
         if (mList.size() !=0){
             mList.clear();
         }
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.discovery_tag_txt:{
+                isOpen = !isOpen;
+                showOrHideTag();
+                break;
+            }
+            default:
+                break;
+        }
+    }
+
+
 }
