@@ -1,5 +1,6 @@
 package com.example.cw.b_practice.module.homeDiscovery;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -7,12 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseFragment;
 import com.example.cw.b_practice.entity.discover.HotSearchTag;
 import com.example.cw.b_practice.module.homeDiscovery.adapter.HotTagRecyclerViewAdapter;
+import com.example.cw.b_practice.module.rank.RankActivity;
 import com.example.cw.b_practice.util.DisplayUtil;
 import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
@@ -37,6 +40,7 @@ public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscov
     private AnimationDrawable mAnimationDrawable;
     private boolean isOpen = false;
     private TextView tagText;
+    private RelativeLayout layout_original, layout_all_rank;
 
     public static HomeDiscoveryFragment newInstance(){
         return new HomeDiscoveryFragment();
@@ -63,6 +67,10 @@ public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscov
         errorView = view.findViewById(R.id.error_view);
         tagText = (TextView) view.findViewById(R.id.discovery_tag_txt);
         tagText.setOnClickListener(this);
+        layout_original = (RelativeLayout) view.findViewById(R.id.layout_original);
+        layout_all_rank = (RelativeLayout) view.findViewById(R.id.layout_all_rank);
+        layout_all_rank.setOnClickListener(this);
+        layout_original.setOnClickListener(this);
         mList = new ArrayList<>();
         showOrHideTag();
         isPrepared = true;
@@ -138,12 +146,25 @@ public class HomeDiscoveryFragment extends RxBaseFragment implements IHomeDiscov
         }
     }
 
+    // TODO: 2017/5/23 暂时只有原创和全区排行跳转
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.discovery_tag_txt:{
                 isOpen = !isOpen;
                 showOrHideTag();
+                break;
+            }
+            case R.id.layout_all_rank:{
+                Intent intent = new Intent(getActivity(), RankActivity.class);
+                intent.putExtra("type", 1);
+                startActivity(intent);
+                break;
+            }
+            case R.id.layout_original:{
+                Intent intent = new Intent(getActivity(), RankActivity.class);
+                intent.putExtra("type", 2);
+                startActivity(intent);
                 break;
             }
             default:

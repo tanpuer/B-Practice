@@ -68,4 +68,11 @@
     <dimen name="home_discovery_tag_item_margin">4dp</dimen>
     <dimen name="home_discovery_tag_item_padding">4dp</dimen>
     <dimen name="home_discovery_tag_margin">10dp</dimen>
+    <dimen name="default_general_margin">10dp</dimen>
+    <dimen name="app_bar_default_elevation">0dp</dimen>
+    <dimen name="line_height">1dp</dimen>
+    <dimen name="default_long_margin">30dp</dimen>
+    <dimen name="default_tiny_padding">5dp</dimen>
+    <dimen name="discover_item_layout_height">46dp</dimen>
+    <dimen name="default_grow_margin">20dp</dimen>
 </resources>

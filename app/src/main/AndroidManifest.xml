@@ -40,6 +40,11 @@
                   android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
             />
 
+        <!-- -->
+        <activity android:name=".module.rank.RankActivity"
+                  android:screenOrientation="portrait"
+                  />
+
         <!--登陆界面-->
         <activity android:name=".module.login.LoginActivity"
                   android:screenOrientation="portrait"/>
