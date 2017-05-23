@@ -88,6 +88,7 @@
     <string name="ta_chase_bangumi">TA的追番</string>
     <string name="ta_quanzi">TA的圈子</string>
     <string name="ta_play_game">TA玩的游戏</string>
+    <string name="menu_search">搜索</string>
 
 
     <string name="video_init">初始化播放器…</string>

@@ -62,4 +62,9 @@
     <dimen name="home_live_partition_card_watching">10dp</dimen>
     <dimen name="home_live_partition_card_title_margin">10dp</dimen>
 
+    <!--HomeDiscoveryFragment相关-->
+    <dimen name="home_discovery_recyclerview_height_big">200dp</dimen>
+    <dimen name="home_discovery_recyclerview_height_small">100dp</dimen>
+    <dimen name="home_discovery_tag_item_margin">4dp</dimen>
+    <dimen name="home_discovery_tag_item_padding">4dp</dimen>
 </resources>
