@@ -2,10 +2,12 @@ package com.example.cw.b_practice.module.mainfragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
@@ -76,10 +78,10 @@ public class MainFragment extends RxBaseFragment implements IMainFragmentContrac
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // TODO: 2017/5/23
+        // TODO: 2017/5/24 menu不显示
         inflater.inflate(R.menu.menu_main, menu);
-//        MenuItem item = menu.findItem(R.id.action_search);
-//        mSearchView = (SearchView) MenuItemCompat.getActionView(item);
+        MenuItem item = menu.findItem(R.id.action_search);
+        mSearchView = (SearchView) MenuItemCompat.getActionView(item);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
