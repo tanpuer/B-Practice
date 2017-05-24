@@ -32,6 +32,14 @@
             <!--</intent-filter>-->
         <!--</activity>-->
 
+        <!--ListView, RecyclerView测试页面-->
+        <!--<activity android:name=".test.RecyclerViewTestActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
         <!--主界面-->
         <activity android:name=".module.main.MainActivity"
                   android:launchMode="singleTask"

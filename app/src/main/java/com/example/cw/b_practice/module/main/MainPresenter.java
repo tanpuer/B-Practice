@@ -1,9 +1,11 @@
 package com.example.cw.b_practice.module.main;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 
+import com.example.cw.b_practice.MyApplication;
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.util.ConstantsUtil;
 import com.example.cw.b_practice.util.PreferencesUtil;
@@ -63,7 +65,7 @@ public class MainPresenter implements IMainContract.IMainPresenter {
                 break;
             }
             case R.id.iv_head_switch_mode:{
-                boolean isNight = PreferencesUtil.getBoolean(ConstantsUtil.SWITCH_MODE_KEY, false);
+                boolean isNight = (MyApplication.getInstance().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
                 if (isNight){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     PreferencesUtil.setBoolean(ConstantsUtil.SWITCH_MODE_KEY, false);

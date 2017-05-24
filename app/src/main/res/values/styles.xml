@@ -22,4 +22,9 @@
     <!-- 主界面style !-->
     <style name="MainActivityTranslucentTheme" parent="@style/BaseAppTheme"/>
 
+    <style name="windowFadeInOutAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+    
 </resources>
