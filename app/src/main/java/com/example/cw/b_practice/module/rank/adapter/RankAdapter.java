@@ -28,7 +28,7 @@ public class RankAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (mFragments[position] ==null){
-            return RankFragment.newInstance();
+            return RankFragment.newInstance(types[position]);
         }
         return mFragments[position];
     }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/rank_fragment_card_size"
+                android:layout_marginBottom="@dimen/rank_fragment_card_margin"
+    >
+
+    <TextView
+        android:id="@+id/sort_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/rank_fragment_text_margin"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        />
+    
+    <ImageView
+        android:id="@+id/rank_image"
+        android:layout_width="@dimen/rank_fragment_image_size"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/sort_num"
+        android:layout_marginStart="@dimen/rank_fragment_text_margin"
+        />
+
+    <TextView
+        android:id="@+id/rank_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/rank_fragment_title_size"
+        android:layout_toEndOf="@+id/rank_image"
+        android:layout_marginTop="@dimen/rank_fragment_text_margin"
+        android:layout_marginLeft="@dimen/rank_fragment_text_margin"
+        />
+
+    <TextView
+        android:id="@+id/rank_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/rank_image"
+        android:layout_below="@id/rank_title"
+        android:layout_marginStart="@dimen/rank_fragment_text_margin"
+        android:drawableStart="@drawable/icon_up"
+        android:layout_marginTop="@dimen/rank_fragment_margin_top"
+        />
+
+    <TextView
+        android:id="@+id/rank_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/rank_image"
+        android:layout_below="@id/rank_user"
+        android:layout_marginStart="@dimen/rank_fragment_text_margin"
+        android:drawableStart="@drawable/ic_play_circle_outline_black_24dp"
+        android:layout_marginTop="@dimen/rank_fragment_margin_top"
+        />
+
+    <TextView
+        android:id="@+id/rank_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/rank_play"
+        android:layout_below="@id/rank_user"
+        android:layout_marginStart="@dimen/rank_fragment_text_margin"
+        android:drawableStart="@drawable/ic_subtitles_black_24dp"
+        android:layout_marginTop="@dimen/rank_fragment_margin_top"
+        />
+
+
+</RelativeLayout>

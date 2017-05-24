@@ -76,4 +76,14 @@
     <dimen name="default_tiny_padding">5dp</dimen>
     <dimen name="discover_item_layout_height">46dp</dimen>
     <dimen name="default_grow_margin">20dp</dimen>
+
+    <!--RankFragment相关-->
+    <dimen name="rank_fragment_card_size">90dp</dimen>
+    <dimen name="rank_fragment_card_margin">10dp</dimen>
+    <dimen name="rank_fragment_text_margin">10dp</dimen>
+    <dimen name="rank_fragment_image_size">120dp</dimen>
+    <dimen name="rank_fragment_title_size">30dp</dimen>
+    <dimen name="rank_fragment_margin_top">5dp</dimen>
+
+
 </resources>

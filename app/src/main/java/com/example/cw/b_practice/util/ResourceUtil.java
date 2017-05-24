@@ -15,4 +15,8 @@ public class ResourceUtil {
     public static int getDimenById(int id){
         return (int) MyApplication.getInstance().getResources().getDimension(id);
     }
+
+    public static int getColorById(int id){
+        return MyApplication.getInstance().getResources().getColor(id);
+    }
 }
