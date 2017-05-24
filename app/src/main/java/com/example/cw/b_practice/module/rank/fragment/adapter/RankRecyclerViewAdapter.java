@@ -2,6 +2,7 @@ package com.example.cw.b_practice.module.rank.fragment.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import java.util.List;
 
 public class RankRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final String TAG = "RankRecyclerViewAdapter";
     private List<AllareasRankInfo.RankBean.ListBean> mList;
     private Context mContext;
     private LayoutInflater mInflater;
@@ -47,12 +49,13 @@ public class RankRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             ((MyViewHolder) holder).playNum.setText(bean.getPlay());
             ((MyViewHolder) holder).reviewNum.setText(String.valueOf(bean.getReview()));
             if (position<3){
+                Log.d(TAG, "onBindViewHolder: " +position);
+                //这样不止3个  holder回收利用了。。。
                 ((MyViewHolder) holder).sortNum.setTextSize(22);
                 ((MyViewHolder) holder).sortNum.setTextColor(ResourceUtil.getColorById(R.color.colorPrimary));
             }
         }
     }
-
 
     @Override
     public int getItemCount() {

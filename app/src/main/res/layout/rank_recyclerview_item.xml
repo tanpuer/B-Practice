@@ -13,6 +13,8 @@
         android:layout_marginStart="@dimen/rank_fragment_text_margin"
         android:layout_centerInParent="true"
         android:textStyle="bold"
+        android:textSize="@dimen/rank_fragment_text_size"
+        android:textColor="@color/gray"
         />
     
     <ImageView

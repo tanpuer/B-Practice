@@ -74,7 +74,9 @@ public class RankPresenter implements IRankContract.IRankPresenter{
                     break;
                 }
                 case 2:{
-
+                    titles = new String[] { "原创", "全站", "番剧" };
+                    types = new String[] { "origin-03.json", "all-03.json", "all-3-33.json" };
+                    toolbarTitle = ResourceUtil.getStringById(R.string.original_rank);
                     break;
                 }
                 default:
