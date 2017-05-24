@@ -1,10 +1,13 @@
 package com.example.cw.b_practice.module.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.widget.ImageView;
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseActivity;
 import com.example.cw.b_practice.module.mainfragment.MainFragment;
+import com.example.cw.b_practice.module.offLine.OffLineActivity;
 import com.example.cw.b_practice.util.ConstantsUtil;
 import com.example.cw.b_practice.util.PreferencesUtil;
 
@@ -32,6 +36,7 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
     private CircleImageView head_avatar;
     private ImageView head_notify;
     private ImageView head_switch_mode;
+    private DrawerLayout mDrawerLayout;
 
     private MainFragment mMainFragment;
     private Fragment[] mFragments;
@@ -66,6 +71,7 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
         head_avatar.setOnClickListener(this);
         head_notify.setOnClickListener(this);
         head_switch_mode.setOnClickListener(this);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         changeDayNightImage();
         initFragments();
         initNavigationView();
@@ -104,7 +110,15 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+        switch (item.getItemId()){
+            case R.id.item_download:{
+                startActivity(new Intent(this, OffLineActivity.class));
+                return true;
+            }
+            default:
+                return false;
+        }
     }
 
     @Override

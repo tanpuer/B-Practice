@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--进度条相关-->
+    <declare-styleable name="ProgressView">
+        <attr name="progress_height" format="dimension"/>
+        <attr name="used_color" format="color"/>
+        <attr name="unused_color" format="color"/>
+    </declare-styleable>
+
+
+</resources>

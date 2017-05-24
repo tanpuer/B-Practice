@@ -48,10 +48,15 @@
                   android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
             />
 
-        <!-- -->
+        <!--排行榜-->
         <activity android:name=".module.rank.RankActivity"
                   android:screenOrientation="portrait"
                   />
+
+        <!--离线-->
+        <activity android:name=".module.offLine.OffLineActivity"
+                  android:screenOrientation="portrait"
+            />
 
         <!--登陆界面-->
         <activity android:name=".module.login.LoginActivity"
