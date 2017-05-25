@@ -162,6 +162,11 @@
 
     <string name="loading_error">"加载失败~(≧▽≦)~啦啦啦."</string>
     <string name="retry_loading">"点击加载"</string>
-    <string name="is_loading">"正在全速加载中..."</string>
+    <string name="is_loading">正在全速加载中...</string>
+    <string name="title_default">详情</string>
+    <string name="open_in_browser">用浏览器打开</string>
+    <string name="copy_to_board">复制到剪贴板</string>
+    <string name="positive_btn">确定</string>
+    <string name="choose_browser">请选择浏览器</string>
 
 </resources>

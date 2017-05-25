@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/webview_share"
+        android:title="@string/about_menu_action_share"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/webview_browser"
+        android:title="@string/open_in_browser"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/webview_copy"
+        android:title="@string/copy_to_board"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+</menu>

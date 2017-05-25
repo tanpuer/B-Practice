@@ -1,6 +1,7 @@
 package com.example.cw.b_practice.module.homeLive.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.entity.live.LiveAppIndexInfo;
 import com.example.cw.b_practice.module.homeRecommend.banner.GlideImageLoader;
+import com.example.cw.b_practice.module.webview.WebViewActivity;
+import com.example.cw.b_practice.util.ConstantsUtil;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -73,6 +76,13 @@ public class HomeLiveAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 images.add(mBannerBeen.get(i).getImg());
             }
             ((MyBannerViewHolder) holder).mBanner.setImages(images).setImageLoader(new GlideImageLoader()).start();
+            // TODO: 2017/5/25  换组件库
+            ((MyBannerViewHolder) holder).mBanner.setOnBannerListener(view -> {
+                Intent intent = new Intent(mContext, WebViewActivity.class);
+                intent.putExtra(ConstantsUtil.EXTRA_TITLE, mBannerBeen.get(0).getTitle());
+                intent.putExtra(ConstantsUtil.EXTRA_URL, mBannerBeen.get(0).getLink());
+                mContext.startActivity(intent);
+            });
         }else if (holder instanceof MyEntranceViewHolder) {
             LiveAppIndexInfo.DataBean.EntranceIconsBean bean = mEntranceIconBeen.get(position -1);
             Glide.with(mContext).load(bean.getEntrance_icon().getSrc()).into(((MyEntranceViewHolder) holder).img);

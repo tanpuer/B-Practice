@@ -1,6 +1,7 @@
 package com.example.cw.b_practice.module.homeRecommend.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +18,8 @@ import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.entity.recommend.RecommendBannerInfo;
 import com.example.cw.b_practice.entity.recommend.RecommendInfo;
 import com.example.cw.b_practice.module.homeRecommend.banner.GlideImageLoader;
+import com.example.cw.b_practice.module.webview.WebViewActivity;
+import com.example.cw.b_practice.util.ConstantsUtil;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -78,6 +81,13 @@ public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
                 images.add(bannerList.get(i).getImage());
             }
             ((BannerViewHolder) holder).mBanner.setImages(images).setImageLoader(new GlideImageLoader()).start();
+            // TODO: 2017/5/25 这个组件库缺少getCurrentItem方法。
+            ((BannerViewHolder) holder).mBanner.setOnBannerListener(view->{
+                Intent intent = new Intent(mContext, WebViewActivity.class);
+                intent.putExtra(ConstantsUtil.EXTRA_URL, bannerList.get(0).getValue());
+                intent.putExtra(ConstantsUtil.EXTRA_TITLE, bannerList.get(0).getTitle());
+                mContext.startActivity(intent);
+            });
         }else if (holder instanceof InfoViewHolder){
             RecommendInfo.ResultBean.HeadBean headBean = infoList.get(position-1).getHead();
             ((InfoViewHolder) holder).txt.setText(headBean.getTitle());
@@ -145,6 +155,7 @@ public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         public BannerViewHolder(View itemView) {
             super(itemView);
             mBanner = (Banner) itemView.findViewById(R.id.recommend_banner);
+            // TODO: 2017/5/25 这个banner缺少getCurrentPage的方法,默认第一个...
         }
     }
 
