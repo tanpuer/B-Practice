@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,7 @@ import com.example.cw.b_practice.util.ResourceUtil;
 
 public class WebViewActivity extends RxBaseActivity implements IWebViewContract.IWebViewView{
 
+    private static final String TAG = "WebViewActivity";
     private IWebViewContract.IWebViewPresenter mPresenter;
     private Toolbar mToolbar;
     private WebView mWebView;
@@ -93,6 +95,18 @@ public class WebViewActivity extends RxBaseActivity implements IWebViewContract.
                 build.create();
                 build.show();
                 return true;
+            }
+        });
+        mWebView.setWebChromeClient(new WebChromeClient(){
+
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                Log.d(TAG, "onReceivedTitle: " + title);
+            }
+
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                Log.d(TAG, "onProgressChanged: " + newProgress);
             }
         });
         mWebView.loadUrl(url);
