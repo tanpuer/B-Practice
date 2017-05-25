@@ -88,4 +88,9 @@
 
     <!--offline_activity相关-->
     <dimen name="offline_activity_text_margin">10dp</dimen>
+
+    <!--DialogTips相关-->
+    <dimen name="dialog_tips_width">50dp</dimen>
+    <dimen name="dialog_tips_height">100dp</dimen>
+
 </resources>
