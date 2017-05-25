@@ -63,6 +63,7 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
     public void initViews(Bundle savedInstanceState) {
         mContainer = (FrameLayout) findViewById(R.id.container);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
+        mNavigationView.setNavigationItemSelectedListener(this);
         //注意Navigation里的header menu获取
         View headerView = mNavigationView.getHeaderView(0);
         head_avatar = (CircleImageView) headerView.findViewById(R.id.header_avatar);

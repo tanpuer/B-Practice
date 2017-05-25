@@ -2,6 +2,8 @@ package com.example.cw.b_practice.module.offLine;
 
 import android.os.Bundle;
 import android.text.format.Formatter;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseActivity;
@@ -12,6 +14,9 @@ import com.example.cw.b_practice.util.CommonUtil;
  */
 
 public class OffLineActivity extends RxBaseActivity {
+
+    private ProgressBar mProgressBar;
+    private TextView mTextView;
 
     @Override
     protected int getLayoutId() {
@@ -24,7 +29,13 @@ public class OffLineActivity extends RxBaseActivity {
         long phoneTotalSize = CommonUtil.getPhoneTotalSize();
         String availableSizeStr = Formatter.formatFileSize(this, phoneAvailableSize);
         String totalSizeStr = Formatter.formatFileSize(this, phoneTotalSize);
-        int progress = countProgress(phoneAvailableSize, phoneTotalSize);
+        int percent = countProgress(phoneAvailableSize, phoneTotalSize);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mTextView = (TextView) findViewById(R.id.progressDesc);
+        mTextView.setText("剩余空间" + availableSizeStr + "/" + "总空间" + totalSizeStr);
+        mProgressBar.setProgress(percent);
+        mProgressBar.invalidate();
+
     }
 
     private int countProgress(long phoneAvailableSize, long phoneTotalSize) {

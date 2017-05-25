@@ -5,4 +5,29 @@
 
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            style="?android:progressBarStyleHorizontal"
+            android:max="100"
+            android:progress="50"
+            android:progressDrawable="@drawable/offline_progress"
+            />
+        <TextView
+            android:id="@+id/progressDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:lines="1"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/offline_activity_text_margin"
+            />
+    </RelativeLayout>
+
 </RelativeLayout>

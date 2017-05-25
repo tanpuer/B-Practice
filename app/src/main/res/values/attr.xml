@@ -3,9 +3,9 @@
 
     <!--进度条相关-->
     <declare-styleable name="ProgressView">
-        <attr name="progress_height" format="dimension"/>
         <attr name="used_color" format="color"/>
         <attr name="unused_color" format="color"/>
+        <attr name="used_percent" format="integer"/>
     </declare-styleable>
 
 
