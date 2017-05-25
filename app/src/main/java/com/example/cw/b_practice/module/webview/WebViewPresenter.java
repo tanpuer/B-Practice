@@ -2,6 +2,13 @@ package com.example.cw.b_practice.module.webview;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import com.example.cw.b_practice.MyApplication;
+import com.example.cw.b_practice.R;
+import com.example.cw.b_practice.util.ClipBoardUtil;
+import com.example.cw.b_practice.util.ResourceUtil;
+import com.example.cw.b_practice.widget.DialogTips;
 
 import java.lang.ref.WeakReference;
 
@@ -49,6 +56,7 @@ public class WebViewPresenter implements IWebViewContract.IWebViewPresenter {
 
     @Override
     public void copyToBoard(String url) {
-
+        ClipBoardUtil.setText(url);
+        DialogTips.showImageToast(MyApplication.getInstance(), ResourceUtil.getDrawableById(R.drawable.icon_up), Toast.LENGTH_SHORT);
     }
 }

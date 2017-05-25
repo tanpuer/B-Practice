@@ -1,5 +1,7 @@
 package com.example.cw.b_practice.util;
 
+import android.graphics.drawable.Drawable;
+
 import com.example.cw.b_practice.MyApplication;
 
 /**
@@ -18,5 +20,9 @@ public class ResourceUtil {
 
     public static int getColorById(int id){
         return MyApplication.getInstance().getResources().getColor(id);
+    }
+
+    public static Drawable getDrawableById(int id){
+        return MyApplication.getInstance().getResources().getDrawable(id);
     }
 }
