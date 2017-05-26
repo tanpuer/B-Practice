@@ -20,6 +20,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseActivity;
@@ -42,6 +43,7 @@ public class WebViewActivity extends RxBaseActivity implements IWebViewContract.
     private ImageView mImageView;
     private AnimationDrawable mAnimationDrawable;
     private WebViewClientBase webViewClient;
+    private ProgressBar mProgressBar;
 
     @Override
     public void setPresenter(IWebViewContract.IWebViewPresenter presenter) {
@@ -62,6 +64,7 @@ public class WebViewActivity extends RxBaseActivity implements IWebViewContract.
         mWebView = (WebView) findViewById(R.id.webview);
         loadingView = findViewById(R.id.loading_view);
         mImageView = (ImageView) loadingView.findViewById(R.id.loading_image);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         Intent intent = getIntent();
         if (intent !=null) {
             title = intent.getStringExtra(ConstantsUtil.EXTRA_TITLE);
@@ -107,6 +110,7 @@ public class WebViewActivity extends RxBaseActivity implements IWebViewContract.
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 Log.d(TAG, "onProgressChanged: " + newProgress);
+                mProgressBar.setProgress(newProgress);
             }
         });
         mWebView.loadUrl(url);
@@ -194,6 +198,7 @@ public class WebViewActivity extends RxBaseActivity implements IWebViewContract.
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
             showOrHideLoadingView(true);
+            mProgressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -201,6 +206,7 @@ public class WebViewActivity extends RxBaseActivity implements IWebViewContract.
             super.onPageFinished(view, url);
             showOrHideLoadingView(false);
             view.getSettings().setBlockNetworkImage(false);
+            mProgressBar.setVisibility(View.GONE);
         }
 
         @Override
