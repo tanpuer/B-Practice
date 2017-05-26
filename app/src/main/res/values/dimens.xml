@@ -29,6 +29,7 @@
     <!--tabLayout -->
     <dimen name="sliding_tab_default_height">48dp</dimen>
     <dimen name="sliding_tab_corner_radius">1dp</dimen>
+    <dimen name="sliding_tab_underline_height">3dp</dimen>
 
     <!--RecommendFragment相关-->
     <dimen name="recommend_banner_height">150dp</dimen>
@@ -92,5 +93,11 @@
     <!--DialogTips相关-->
     <dimen name="dialog_tips_width">50dp</dimen>
     <dimen name="dialog_tips_height">100dp</dimen>
+    
+    <!---->
+    <dimen name="video_detail_collapsing_size">226dp</dimen>
+    <dimen name="video_detail_image_shader_size">226dp</dimen>
+    <dimen name="video_detail_fab_margin_top">190dp</dimen>
+    <dimen name="video_detail_fab_margin_end">16dp</dimen>
 
 </resources>

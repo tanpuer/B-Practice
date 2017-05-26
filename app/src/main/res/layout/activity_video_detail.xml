@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            >
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsed_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/video_detail_collapsing_size"
+                android:fitsSystemWindows="true"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentScrim="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/video_detail_collapsing_size">
+
+                    <ImageView
+                        android:id="@+id/preview_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/video_detail_collapsing_size"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/video_detail_image_shader_size"
+                        android:background="@drawable/video_detail_image_gradient"
+                        />
+
+                </FrameLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_av"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_fab_play"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:text="@string/play_immediately"
+                        />
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/sliding_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sliding_tab_default_height"
+                android:paddingLeft="@dimen/default_margin"
+                android:paddingRight="@dimen/default_margin"
+                android:background="@color/white"
+                app:tl_indicator_corner_radius="@dimen/sliding_tab_corner_radius"
+                app:tl_textSelectColor="@color/colorPrimary"
+                app:tl_textUnselectColor="@color/black_80"
+                app:tl_indicator_color="@color/colorPrimary"
+                app:tl_indicator_height="@dimen/sliding_tab_underline_height"
+                >
+            </com.flyco.tablayout.SlidingTabLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+        </android.support.v4.view.ViewPager>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_fab_play"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|end|right"
+        android:layout_gravity="end"
+        app:rippleColor="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/video_detail_fab_margin_top"
+        android:layout_marginEnd="@dimen/video_detail_fab_margin_end"
+        />
+
+</FrameLayout>

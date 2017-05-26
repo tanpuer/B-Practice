@@ -1,5 +1,6 @@
 package com.example.cw.b_practice.module.homeRecommend.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -18,6 +19,7 @@ import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.entity.recommend.RecommendBannerInfo;
 import com.example.cw.b_practice.entity.recommend.RecommendInfo;
 import com.example.cw.b_practice.module.homeRecommend.banner.GlideImageLoader;
+import com.example.cw.b_practice.module.videoDetail.VideoDetailActivity;
 import com.example.cw.b_practice.module.webview.WebViewActivity;
 import com.example.cw.b_practice.util.ConstantsUtil;
 import com.youth.banner.Banner;
@@ -31,6 +33,8 @@ import java.util.List;
 
 public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final String LIVE_TYPE = "live";
+    private static final String BANGUMI_LIST = "bangumi_list";
     private static final String TAG = "RecommendRecyclerView";
     private static final int Recommend_Banner = 1;
     private static final int Recommend_Info_Card = 2;
@@ -96,9 +100,6 @@ public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
                 Log.d(TAG, "onBindViewHolder: " + holder);
                 RecommendInfo.ResultBean.BodyBean bodyBean = infoList.get(position-1).getBody().get(i);
                 CardView cardView = (CardView) ((InfoViewHolder) holder).mGridLayout.getChildAt(i);
-
-                cardView.setOnClickListener((v)-> Toast.makeText(mContext, bodyBean.getGotoX(), Toast.LENGTH_SHORT).show());
-
                 ImageView imageView = (ImageView) cardView.findViewById(R.id.recommend_image);
                 TextView playNum = (TextView) cardView.findViewById(R.id.recommend_play_num);
                 TextView reviewNum = (TextView) cardView.findViewById(R.id.recommend_review_num);
@@ -108,6 +109,21 @@ public class RecommendRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
                 reviewNum.setText(bodyBean.getDanmaku());
                 Glide.with(mContext).load(bodyBean.getCover()).into(imageView);
 
+                cardView.setOnClickListener((v) -> {
+                    Toast.makeText(mContext, bodyBean.getGotoX(), Toast.LENGTH_SHORT).show();
+                    switch (bodyBean.getGotoX()){
+//                        case LIVE_TYPE:{
+//                            // TODO: 2017/5/26
+//                            break;
+//                        }
+//                        case BANGUMI_LIST:{
+//                            break;
+//                        }
+                        default:
+                            VideoDetailActivity.launch((Activity)mContext, Integer.parseInt(bodyBean.getParam()), bodyBean.getCover());
+                            break;
+                    }
+                });
             }
         }else if (holder instanceof InfoImageHolder){
             List<RecommendInfo.ResultBean.BodyBean> resultBean = infoList.get(position).getBody();

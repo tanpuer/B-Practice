@@ -58,7 +58,13 @@
                   android:screenOrientation="portrait"
             />
 
+        <!--webview-->
         <activity android:name=".module.webview.WebViewActivity"
+                  android:screenOrientation="portrait"
+            />
+
+        <!--视频详情-->
+        <activity android:name=".module.videoDetail.VideoDetailActivity"
                   android:screenOrientation="portrait"
             />
 
