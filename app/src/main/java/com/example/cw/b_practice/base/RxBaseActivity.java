@@ -6,16 +6,22 @@ import android.support.annotation.Nullable;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by cw on 2017/5/15.
  */
 
 public abstract class RxBaseActivity extends RxAppCompatActivity {
 
+    private Unbinder binder;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        binder = ButterKnife.bind(this);
         initViews(savedInstanceState);
         initToolBar();
     }
@@ -39,4 +45,11 @@ public abstract class RxBaseActivity extends RxAppCompatActivity {
     protected void finishTask(){}
 
     //todo 切换主题的逻辑 待做
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binder.unbind();
+    }
 }

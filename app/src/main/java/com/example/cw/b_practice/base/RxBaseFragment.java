@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.components.support.RxFragment;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by cw on 2017/5/15.
  */
@@ -25,6 +28,8 @@ public abstract class RxBaseFragment extends RxFragment {
     protected boolean isPrepared;
     //标记位, fragment可见
     protected boolean isVisible;
+
+    private Unbinder binder;
 
     protected abstract int getResLayoutId();
 
@@ -41,6 +46,7 @@ public abstract class RxBaseFragment extends RxFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         finishCreateView(view,savedInstanceState);
+        binder = ButterKnife.bind(this, view);
     }
 
     @Override
@@ -65,6 +71,12 @@ public abstract class RxBaseFragment extends RxFragment {
             isVisible = false;
             onInvisible();
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binder.unbind();
     }
 
     protected void onVisible() {
