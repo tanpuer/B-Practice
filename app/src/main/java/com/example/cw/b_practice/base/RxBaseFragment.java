@@ -39,6 +39,7 @@ public abstract class RxBaseFragment extends RxFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         parentView = inflater.inflate(getResLayoutId(), container, false);
+        binder = ButterKnife.bind(this, parentView);
         return parentView;
     }
 
@@ -46,7 +47,6 @@ public abstract class RxBaseFragment extends RxFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         finishCreateView(view,savedInstanceState);
-        binder = ButterKnife.bind(this, view);
     }
 
     @Override

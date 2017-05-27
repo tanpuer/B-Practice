@@ -51,6 +51,7 @@ public class VideoCommentsPresenter implements IVideoCommentsContract.IVideoComm
     public void loadData(int page, int pageSize, int aid) {
         final IVideoCommentsContract.IVideoCommentsView view = mView.get();
         if (view != null){
+            view.showLoadingView(true);
 
         }
     }

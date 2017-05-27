@@ -84,7 +84,7 @@
                 android:background="@color/white"
                 app:tl_indicator_corner_radius="@dimen/sliding_tab_corner_radius"
                 app:tl_textSelectColor="@color/colorPrimary"
-                app:tl_textUnselectColor="@color/black_80"
+                app:tl_textUnselectColor="@color/gray"
                 app:tl_indicator_color="@color/colorPrimary"
                 app:tl_indicator_height="@dimen/sliding_tab_underline_height"
                 >
