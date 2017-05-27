@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -53,6 +54,8 @@ public class MainFragment extends RxBaseFragment implements IMainFragmentContrac
     @Override
     protected void finishCreateView(View view, Bundle savedInstanceState) {
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
+        appCompatActivity.setSupportActionBar(mToolbar);
         mCircleImage = (CircleImageView) view.findViewById(R.id.circle_image);
         mSlidingTabs = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
@@ -78,7 +81,7 @@ public class MainFragment extends RxBaseFragment implements IMainFragmentContrac
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // TODO: 2017/5/24 menu不显示
+        // TODO: 2017/5/24 menu不显示F
         inflater.inflate(R.menu.menu_main, menu);
         MenuItem item = menu.findItem(R.id.action_search);
         mSearchView = (SearchView) MenuItemCompat.getActionView(item);
