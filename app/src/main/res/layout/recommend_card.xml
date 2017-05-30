@@ -6,7 +6,6 @@
     android:elevation="@dimen/recommend_card_elevation"
     app:cardCornerRadius="@dimen/recommend_card_corner_radius"
     app:cardBackgroundColor="@color/card_view_background"
-    android:layout_margin="@dimen/recommend_card_margin"
     android:clickable="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -18,7 +17,6 @@
             android:id="@+id/recommend_image"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:padding="10dp"
             android:scaleType="fitCenter"
             />
 
