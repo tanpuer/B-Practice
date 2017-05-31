@@ -94,10 +94,20 @@
     <dimen name="dialog_tips_width">50dp</dimen>
     <dimen name="dialog_tips_height">100dp</dimen>
     
-    <!---->
+    <!--VideoDetailActivity相关-->
     <dimen name="video_detail_collapsing_size">226dp</dimen>
     <dimen name="video_detail_image_shader_size">226dp</dimen>
     <dimen name="video_detail_fab_margin_top">190dp</dimen>
     <dimen name="video_detail_fab_margin_end">16dp</dimen>
+
+    <!---->
+    <dimen name="video_comments_circle_image_size">38dp</dimen>
+    <dimen name="video_comments_left_layout_margin">10dp</dimen>
+    <dimen name="video_comments_author_text_size">16sp</dimen>
+    <dimen name="video_comments_floor_margin">3dp</dimen>
+    <dimen name="video_comments_floor_text_size">12sp</dimen>
+    <dimen name="video_comments_detail_margin">5dp</dimen>
+    <dimen name="video_comments_praise_margin">8dp</dimen>
+    <dimen name="video_comments_num_margin">8dp</dimen>
 
 </resources>

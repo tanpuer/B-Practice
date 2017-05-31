@@ -2,6 +2,9 @@ package com.example.cw.b_practice.module.videoDetail.videoComments;
 
 import com.example.cw.b_practice.base.IBasePresenter;
 import com.example.cw.b_practice.base.IBaseView;
+import com.example.cw.b_practice.entity.video.VideoCommentInfo;
+
+import java.util.List;
 
 /**
  * Created by cw on 2017/5/26.
@@ -14,6 +17,8 @@ public interface IVideoCommentsContract {
         void showLoadingView(boolean show);
 
         void showErrorView(boolean show);
+
+        void setBeans(List<VideoCommentInfo.List> list, List<VideoCommentInfo.HotList> hotList);
 
     }
 
