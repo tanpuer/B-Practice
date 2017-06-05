@@ -100,7 +100,7 @@
     <dimen name="video_detail_fab_margin_top">190dp</dimen>
     <dimen name="video_detail_fab_margin_end">16dp</dimen>
 
-    <!---->
+    <!--VideoCommentsFragment相关-->
     <dimen name="video_comments_circle_image_size">38dp</dimen>
     <dimen name="video_comments_left_layout_margin">10dp</dimen>
     <dimen name="video_comments_author_text_size">16sp</dimen>
@@ -109,5 +109,6 @@
     <dimen name="video_comments_detail_margin">5dp</dimen>
     <dimen name="video_comments_praise_margin">8dp</dimen>
     <dimen name="video_comments_num_margin">8dp</dimen>
+    <dimen name="video_comments_space_height">12dp</dimen>
 
 </resources>

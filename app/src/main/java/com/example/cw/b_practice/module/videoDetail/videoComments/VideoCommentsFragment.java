@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.Unbinder;
 
 /**
  * Created by cw on 2017/5/26.
@@ -31,7 +30,6 @@ public class VideoCommentsFragment extends RxBaseFragment implements IVideoComme
     RecyclerView mCommentRecyclerview;
     @BindView(R.id.comment_rootview)
     FrameLayout mCommentRootview;
-    Unbinder unbinder;
 
     private IVideoCommentsContract.IVideoCommentsPresenter mPresenter;
     private int pageNum = 1;

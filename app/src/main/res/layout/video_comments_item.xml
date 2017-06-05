@@ -4,6 +4,10 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
 
+    <android.support.v4.widget.Space
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/video_comments_space_height"/>
     <LinearLayout
         android:id="@+id/user_avatar_layout"
         android:layout_width="wrap_content"
@@ -12,6 +16,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_margin="@dimen/video_comments_left_layout_margin"
+        android:layout_below="@id/spacer"
         >
         
         <de.hdodenhof.circleimageview.CircleImageView
@@ -29,7 +34,9 @@
     <RelativeLayout
         android:layout_toEndOf="@id/user_avatar_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/spacer"
+        >
 
         <TextView
             android:id="@+id/author"

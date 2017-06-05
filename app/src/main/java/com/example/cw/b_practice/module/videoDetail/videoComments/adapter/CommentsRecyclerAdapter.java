@@ -26,6 +26,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CommentsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final int DEFAULT_TYPE = 1;
+    private static final int FOOTER_TYPE = 2;
     private List<VideoCommentInfo.List> mLists;
     private List<VideoCommentInfo.HotList> mHotLists;
     private Context mContext;
@@ -46,56 +48,29 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof CommentsRecyclerAdapter.MyViewHolder) {
-            int hotListSize = mHotLists.size();
-            if (position<mHotLists.size()){
-                VideoCommentInfo.HotList mList = mHotLists.get(position);
-                Glide.with(mContext).load(mList.face).into(((MyViewHolder) holder).mCircleImage);
-                checkLevel(mList.level_info.current_level, (MyViewHolder)holder);
-                ((MyViewHolder) holder).mAuthor.setText(mList.fbid);
-                ((MyViewHolder) holder).mFloor.setText("#" + mList.lv);
+            VideoCommentInfo.List mList = mLists.get(position);
+            Glide.with(mContext).load(mList.face).into(((MyViewHolder) holder).mCircleImage);
+            checkLevel(mList.level_info.current_level, (MyViewHolder)holder);
+            ((MyViewHolder) holder).mAuthor.setText(mList.fbid);
+            ((MyViewHolder) holder).mFloor.setText("#" + mList.lv);
 
-                switch (mList.sex) {
-                    case "女":
-                        ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_female);
-                        break;
-                    case "男":
-                        ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_male);
-                        break;
-                    default:
-                        ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_gay_border);
-                        break;
-                }
-
-                ((MyViewHolder) holder).mNum.setText(mList.reply_count);
-                ((MyViewHolder) holder).mPraise.setText(mList.good);
-                long l = DateDetail.stringToLong(mList.create_at, "yyyy-MM-dd HH:mm");
-                ((MyViewHolder) holder).mTime.setText(DateDetail.getDescriptionTimeFromTimestamp(l));
-                ((MyViewHolder) holder).mDetail.setText(mList.msg);
-            }else {
-                VideoCommentInfo.List mList = mLists.get(position-hotListSize);
-                Glide.with(mContext).load(mList.face).into(((MyViewHolder) holder).mCircleImage);
-                checkLevel(mList.level_info.current_level, (MyViewHolder)holder);
-                ((MyViewHolder) holder).mAuthor.setText(mList.fbid);
-                ((MyViewHolder) holder).mFloor.setText("#" + mList.lv);
-
-                switch (mList.sex) {
-                    case "女":
-                        ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_female);
-                        break;
-                    case "男":
-                        ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_male);
-                        break;
-                    default:
-                        ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_gay_border);
-                        break;
-                }
-
-                ((MyViewHolder) holder).mNum.setText(mList.reply_count);
-                ((MyViewHolder) holder).mPraise.setText(mList.good);
-                long l = DateDetail.stringToLong(mList.create_at, "yyyy-MM-dd HH:mm");
-                ((MyViewHolder) holder).mTime.setText(DateDetail.getDescriptionTimeFromTimestamp(l));
-                ((MyViewHolder) holder).mDetail.setText(mList.msg);
+            switch (mList.sex) {
+                case "女":
+                    ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_female);
+                    break;
+                case "男":
+                    ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_male);
+                    break;
+                default:
+                    ((MyViewHolder) holder).mUserSex.setImageResource(R.drawable.ic_user_gay_border);
+                    break;
             }
+
+            ((MyViewHolder) holder).mNum.setText(String.valueOf(mList.reply_count));
+            ((MyViewHolder) holder).mPraise.setText(String.valueOf(mList.good));
+            long l = DateDetail.stringToLong(mList.create_at, "yyyy-MM-dd HH:mm");
+            ((MyViewHolder) holder).mTime.setText(DateDetail.getDescriptionTimeFromTimestamp(l));
+            ((MyViewHolder) holder).mDetail.setText(mList.msg);
         }
     }
 
@@ -120,14 +95,11 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return mLists.size() + mHotLists.size();
+//        return mLists.size() + mHotLists.size();
+        return mLists.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
-//        CircleImageView mCircleImageView;
-//        ImageView mLable, sex;
-//        TextView author, floor, time, detail, num, praise;
 
         @BindView(R.id.circle_image)
         CircleImageView mCircleImage;
@@ -155,15 +127,6 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-//            mCircleImageView = (CircleImageView) itemView.findViewById(R.id.circle_image);
-//            mLable = (ImageView) itemView.findViewById(R.id.label);
-//            floor = (TextView) itemView.findViewById(R.id.floor);
-//            time = (TextView) itemView.findViewById(R.id.time);
-//            detail = (TextView) itemView.findViewById(R.id.detail);
-//            num = (TextView) itemView.findViewById(R.id.num);
-//            praise = (TextView) itemView.findViewById(R.id.praise);
-//            author = (TextView) itemView.findViewById(R.id.author);
-//            sex = (ImageView) itemView.findViewById(R.id.author_sex);
         }
     }
 }
