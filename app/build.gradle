@@ -79,4 +79,10 @@ dependencies {
     //ptr
     compile 'in.srain.cube:ultra-ptr:1.0.11'
 
+    //videoplayer + danmaku
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.0'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.0'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.0'
+    //https://juejin.im/post/582ed1c0a0bb9f0067b296a4
+
 }
