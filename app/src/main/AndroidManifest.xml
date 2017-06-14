@@ -72,6 +72,8 @@
         <activity android:name=".module.login.LoginActivity"
                   android:screenOrientation="portrait"/>
 
+        <!--视频播放-->
+        <activity android:name=".module.videoPlay.VideoPlayActivity"/>
 
     </application>
 

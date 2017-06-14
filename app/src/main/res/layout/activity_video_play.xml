@@ -4,5 +4,10 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <com.example.cw.b_practice.module.videoPlay.component.StandardVideoPlayer
+        android:id="@+id/video_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.cw.b_practice.module.videoPlay.component.StandardVideoPlayer>
     
 </LinearLayout>

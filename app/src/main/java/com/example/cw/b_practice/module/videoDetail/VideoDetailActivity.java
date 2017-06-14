@@ -25,6 +25,7 @@ import com.example.cw.b_practice.module.videoDetail.adapter.ViewPagerAdapter;
 import com.example.cw.b_practice.module.videoDetail.listener.AppBarLayoutStateChangeListener;
 import com.example.cw.b_practice.module.videoDetail.videoComments.VideoCommentsFragment;
 import com.example.cw.b_practice.module.videoDetail.videoIntroduction.VideoIntroductionFragment;
+import com.example.cw.b_practice.module.videoPlay.VideoPlayActivity;
 import com.example.cw.b_practice.network.auxiliary.UrlHelper;
 import com.example.cw.b_practice.util.ConstantsUtil;
 import com.example.cw.b_practice.util.DisplayUtil;
@@ -41,7 +42,7 @@ import butterknife.BindView;
  * Created by cw on 2017/5/26.
  */
 
-public class VideoDetailActivity extends RxBaseActivity implements IVideoDetailContract.iVideoDetailView {
+public class VideoDetailActivity extends RxBaseActivity implements IVideoDetailContract.iVideoDetailView, View.OnClickListener{
 
 
     @BindView(R.id.preview_img)
@@ -115,6 +116,7 @@ public class VideoDetailActivity extends RxBaseActivity implements IVideoDetailC
             }
         });
         mPresenter.loadData(aid);
+        mFab.setOnClickListener(this);
     }
 
     private void showViewTranslationY(int verticalOffset) {
@@ -195,4 +197,15 @@ public class VideoDetailActivity extends RxBaseActivity implements IVideoDetailC
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fab:{
+                VideoPlayActivity.launch(this, 0, "");
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }
