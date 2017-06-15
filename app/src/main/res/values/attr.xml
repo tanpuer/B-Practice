@@ -8,5 +8,10 @@
         <attr name="used_percent" format="integer"/>
     </declare-styleable>
 
+    <!--MZBanner相关-->
+    <declare-styleable name="MZBanner">
+        <attr name="switch_time" format="float"/>
+        <attr name="auto_switch" format="boolean"/>
+    </declare-styleable>
 
 </resources>
