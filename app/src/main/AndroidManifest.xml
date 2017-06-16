@@ -75,6 +75,9 @@
         <!--视频播放-->
         <activity android:name=".module.videoPlay.VideoPlayActivity"/>
 
+        <!--测试VLayout-->
+        <activity android:name=".vLayout.VLayoutActivity"/>
+
     </application>
 
 </manifest>

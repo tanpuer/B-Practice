@@ -20,6 +20,7 @@ import com.example.cw.b_practice.module.mainfragment.MainFragment;
 import com.example.cw.b_practice.module.offLine.OffLineActivity;
 import com.example.cw.b_practice.util.ConstantsUtil;
 import com.example.cw.b_practice.util.PreferencesUtil;
+import com.example.cw.b_practice.vLayout.VLayoutActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -115,6 +116,10 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
         switch (item.getItemId()){
             case R.id.item_download:{
                 startActivity(new Intent(this, OffLineActivity.class));
+                return true;
+            }
+            case R.id.item_favourite:{
+                startActivity(new Intent(this, VLayoutActivity.class));
                 return true;
             }
             default:

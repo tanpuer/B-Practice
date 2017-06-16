@@ -94,5 +94,9 @@ dependencies {
     //shadowImageView
     compile 'com.yinglan.shadowimageview:shadowimageview:1.0.2'
 
+    //v-layout
+    compile ('com.alibaba.android:vlayout:1.0.7@aar') {
+        transitive = true
+    }
 
 }
