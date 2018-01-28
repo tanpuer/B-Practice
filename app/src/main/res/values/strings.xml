@@ -107,7 +107,7 @@
     <string name="item_downloaded">离线缓存</string>
     <string name="item_favourite">我的收藏</string>
     <string name="item_history">历史记录</string>
-    <string name="item_settings">设置与帮助</string>
+    <string name="item_settings">自定义View</string>
     <string name="item_theme">主题选择</string>
     <string name="item_app">应用推荐</string>
     <string name="item_vip">我的大会员</string>

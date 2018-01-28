@@ -16,6 +16,7 @@ import android.widget.ImageView;
 
 import com.example.cw.b_practice.R;
 import com.example.cw.b_practice.base.RxBaseActivity;
+import com.example.cw.b_practice.module.CustomView.CustomViewActivity;
 import com.example.cw.b_practice.module.mainfragment.MainFragment;
 import com.example.cw.b_practice.module.offLine.OffLineActivity;
 import com.example.cw.b_practice.util.ConstantsUtil;
@@ -120,6 +121,10 @@ public class MainActivity extends RxBaseActivity implements IMainContract.IMainV
             }
             case R.id.item_favourite:{
                 startActivity(new Intent(this, VLayoutActivity.class));
+                return true;
+            }
+            case R.id.item_settings:{
+                startActivity(new Intent(this, CustomViewActivity.class));
                 return true;
             }
             default:
